@@ -1,0 +1,170 @@
+<header class="header">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="logo"><center><img src="assets/veriteach-logo.jpg"></center></div>
+      </div>
+    </div>
+  </div>
+</header>
+<section class="form-container">
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col-md-6">
+        <div class="form-wrapper panel panel-primary">
+          <%= nested_form_for(build_candidate(@candidate)) do |f| %>
+            <%= render 'multi_step_form/current_step', f: f %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<style type="text/css">
+  body{
+    font-family: 'Raleway', sans-serif;
+  }
+  .form-container {
+    padding: 50px 0px;
+    background-color: #033076;
+  }
+  .form-wrapper{
+    border: 1px solid #428bca;
+    padding: 0 0 20px;
+    background-color: #fff;
+  }
+  .form-wrapper .form-group{
+    position: relative;
+    margin: 0 20px 1rem;
+  }
+  .form-wrapper .form-group .form-icon {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    font-size: 20px;
+    color: #033076;
+  }
+  .form-wrapper .form-group input, .form-wrapper .form-group textarea, .form-wrapper .form-group select{
+    padding-left: 35px;
+    min-height: 45px;
+  }
+  .form-wrapper .form-group input:focus{
+    box-shadow: none;
+    outline-color: #ced4da;
+    border-color: #ced4da;
+  }
+  .form-wrapper .form-group.password-field .form-icon{
+    top: 30px;
+  }
+  .terms-conditions{
+    text-align: left;
+    text-decoration: underline;
+    display: block;
+    color: #033076;
+  }
+  .terms-conditions:hover{
+    text-decoration: none;
+  }
+  .submit-btn {
+    min-width: 250px;
+    margin: 0 auto;
+    display: block;
+    font-size: 24px;
+    text-transform: uppercase;
+  }
+  .panel-primary .panel-heading {
+    color: #033076;
+    background-color: #fff;
+    border-color: #fff;
+    padding: 12px 0;
+    font-size: 28px;
+    text-align: center;
+    line-height: normal;
+    font-weight: 600;
+    font-family: 'Raleway', sans-serif;
+  }
+  .sub-title{
+    margin-top: 15px;
+  }
+  .check-box{
+    float: left;
+    overflow: hidden;
+    width: 30px;
+  }
+  .extra-wrap{
+    overflow: hidden;
+    vertical-align: top;
+    text-align: left;
+  }
+
+  .check-box input[type="checkbox"]{
+    min-height: auto;
+  }
+  .control-label {
+      float: left;
+      width: 160px;
+      padding-top: 5px;
+      text-align: right;
+  }
+  .form-horizontal .controls {
+      margin-left: 180px;
+  }
+  .contidate-name{
+    padding-left: 10px !important;
+  }
+  .add-user{
+    font-size: 40px;
+    float: right;
+    margin-right: 20px;
+  }
+  .header{
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+  }
+ 
+  .e-form-1{
+    position: relative;
+  }
+  .toggle-arrow{
+    position: absolute;
+    right: 5px;
+    font-size: 45px;
+    width: 100%;
+    text-align: right;
+  }
+  /*#step-1{
+    display: none;
+  }
+  #step-2{
+    display: none;
+  }*/
+</style>
+<script type="text/javascript">
+  var form_count = $('form .fields').length;
+
+  if(form_count > 0){
+    $(".fields").attr('id', 'form' + form_count);
+  }
+
+  $(document).on('nested:fieldAdded', function(event){
+    var next_form_count = $('form .fields').length;
+    var panel_heading   = "Employer " + (next_form_count -1);
+    var previous_form   = next_form_count -1;
+    
+    $(event.field[0]).attr('id', 'form' + next_form_count);
+    $('.sub-title').append('<div class="form-group" id="'+previous_form+'"><div class="row"><div class="col-md-3"><label>'+ panel_heading +'</label></div><div class="col-md-9"><div class="e-form-1" id="e-form-1"><i class="fa fa-caret-right toggle-arrow"></i><input type="text" name="fname" value="Norway"  class="form-control" readonly><br></div></div></div></div>');
+    $('#form' + previous_form).slideUp(500); 
+  });
+
+    $(document).on('click', '.form-group', function(){
+      var current_obeject_value = parseInt($(this).attr('id'));
+      var next_form = $('form .fields').length;
+      $('#form' + next_form).hide();
+      $('#form' +  $(this).attr('id')).slideDown(500);
+
+      // if(current_obeject_value == 1){
+      //   $(this).hide();
+      // }
+    });
+</script>

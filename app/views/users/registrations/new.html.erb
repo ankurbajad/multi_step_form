@@ -26,8 +26,7 @@
     padding: 0 0 20px;
     background-color: #fff;
   }
-
-    .form-wrapper .form-group{
+  .form-wrapper .form-group{
     position: relative;
     margin: 0 20px 1rem;
   }
@@ -37,7 +36,7 @@
     left: 8px;
     font-size: 20px;
     color: #428bca;
-}
+  }
   .form-wrapper .form-group input, .form-wrapper .form-group, textarea .form-wrapper .form-group select{
     padding-left: 35px;
     min-height: 45px;
@@ -73,42 +72,43 @@
     font-size: 24px;
     text-align: center;
     line-height: normal;
-}
-.sub-title{
-  margin-top: 15px;
-}
-.check-box{
-  float: left;
-  overflow: hidden;
-  width: 30px;
-}
-.extra-wrap{
-  overflow: hidden;
-  vertical-align: top;
-  text-align: left;
-}
-
-.check-box input[type="checkbox"]{
-  min-height: auto;
-}
-.control-label {
+  }
+  .sub-title{
+    margin-top: 15px;
+  }
+  .check-box{
     float: left;
-    width: 160px;
-    padding-top: 5px;
-    text-align: right;
-}
-.form-horizontal .controls {
-    margin-left: 180px;
-}
-.contidate-name{
-  padding-left: 10px !important;
-}
-.add-user{
-  font-size: 40px;
-  float: right;
-  margin-right: 20px;
-}
+    overflow: hidden;
+    width: 30px;
+  }
+  .extra-wrap{
+    overflow: hidden;
+    vertical-align: top;
+    text-align: left;
+  }
+
+  .check-box input[type="checkbox"]{
+    min-height: auto;
+  }
+  .control-label {
+      float: left;
+      width: 160px;
+      padding-top: 5px;
+      text-align: right;
+  }
+  .form-horizontal .controls {
+      margin-left: 180px;
+  }
+  .contidate-name{
+    padding-left: 10px !important;
+  }
+  .add-user{
+    font-size: 40px;
+    float: right;
+    margin-right: 20px;
+  }
 </style>
+<%# debugger %>
 <script type="text/javascript">
   $('.add-user').on('click', function(){ 
     $('.district-form-container').slideUp(2000); 
@@ -118,4 +118,12 @@
     $('.district-form-container').slideDown(2000);
     // $('p').hide();
   });
+
+  // $(function(){
+  //   // debugger
+  //   var user_street_address = $('#user_street_address').val();
+  //   var user_state          = $('#state').val();
+  //   var user_city           = $('#user_city').val();
+  //   var user_zip_code       = $('#user_zip_code').val();
+  // })
 </script>
