@@ -1,0 +1,70 @@
+
+<div class="panel-heading">Candidate Information</div>
+<p class="text-center sub-title">Please complete the following Information</p>
+<div class="form-group">
+  <div class="form-icon"><i class="fa fa-user"></i></div>
+  <%= f.text_field :user_name, :class => 'form-control', :placeholder=>"User Name" %>
+</div>
+
+<div class="form-group">
+  <div class="form-icon"><i class="fa fa-file"></i></div>
+  <%= f.text_field :social_security, :class => 'form-control', :placeholder=>"Social security" %>
+</div>
+
+<div class="form-group">
+  <div class="form-icon"><i class="fa fa-calendar"></i></div>
+  <%= f.text_field :date_of_birth, :class => 'form-control datepicker', :placeholder=>"Date Of Birth" %>
+</div>
+
+<div class="form-group">
+  <div class="form-icon"><i class="fa fa-envelope"></i></div>
+  <%= f.email_field :email, autofocus: true, autocomplete: "email", :class => 'form-control', :placeholder=>"Email" %>
+</div>
+
+<div class="form-group">
+  <div class="form-icon"><i class="fa fa-map-marker"></i></div>
+  <%= f.text_area :street_address, :class => 'form-control', :placeholder=>"Street Address" %>
+</div>
+
+<div class="form-group">
+  <div class="form-icon"><i class="fa fa-building"></i></div>
+  <%= f.select :state, options_for_select(User::SELECT_STATE_OPTION), {:prompt => "Select state" }, :id => 'state', :class => 'form-control' %>
+  <%#= f.text_field :state, :class => 'form-control', :placeholder=>"State" %>
+</div>
+
+ <div class="form-group">
+  <div class="form-icon"><i class="fa fa-building"></i></div>
+  <%= f.text_field :city, :class => 'form-control', :placeholder=>"City" %>
+</div>
+
+<div class="form-group">
+  <div class="form-icon"><i class="fa fa-user"></i></div>
+  <%= f.text_field :zip_code, :class => 'form-control', :placeholder=>"Zip Code" %>
+</div>
+
+<div class="form-group password-field">
+  <div class="form-icon"><i class="fa fa-lock"></i></div>
+  <% if @minimum_password_length %>
+  <small>(<%= @minimum_password_length %> characters minimum)</small>
+  <% end %><br />
+  <%= f.password_field :password, autocomplete: "off", :class => 'form-control', :placeholder=>"Password" %>
+</div>
+<div class="form-group">
+  <div class="form-icon"><i class="fa fa-lock"></i></div>
+  <%= f.password_field :password_confirmation, autocomplete: "off", :class => 'form-control', :placeholder=>"Confirm Password" %>
+</div>
+<div class="form-group">
+  <span class="check-box">
+    <input type="checkbox" id='check'/>
+    </span>
+    <div class="extra-wrap">
+      <label for="check" class="checkdata">By selecting this box I consent to recieve electronic communications from Veriteach LLC. per the</label>
+      <p><a href="javascript:void(0)" class="terms-conditions">Terms & Conditions</a></p>
+    </div> 
+</div>
+<script type="text/javascript">
+  // $('#state').select2({
+  //   allowClear: true,
+  //   placeholder: 'Select state',
+  // });
+</script>

@@ -1,0 +1,8 @@
+<%= f.hidden_field :current_step, value: f.object.current_step %>
+
+<%#= render "multi_step_form/page#{f.object.current_step + 1}", f: f %>
+<%= render "multi_step_form/page2", f: f %>
+<div class="field">
+  <%#= f.submit "Back", name: "back_button" unless f.object.first_step? %>
+  <%= f.submit f.object.last_step? ? nil: "Next", :class => 'btn btn-success submit-btn' %>
+</div>
