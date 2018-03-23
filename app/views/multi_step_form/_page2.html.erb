@@ -5,48 +5,57 @@
   <div class="district-form-container">
     <div class="form-group">
       <div class="form-icon"><i class="fa fa-user"></i></div>
-      <%= cf.text_field :name, :placeholder=>"Name", :class => 'form-control'%>
+      <%= cf.text_field :name, :placeholder=>"Name", :class => 'form-control district_name'%>
+      <span class="district_name_error"></span>
     </div>
 
     <div class="form-group">
       <div class="form-icon"><i class="fa fa-file"></i></div>
-      <%= cf.text_field :nces, :placeholder=>"*NCES", :class => 'form-control' %>
+      <%= cf.text_field :nces, :placeholder=>"*NCES", :class => 'form-control district_nces' %>
+      <span class="district_nces_error"></span>
     </div>
 
     <div class="form-group">
       <div class="form-icon"><i class="fa fa-address-book"></i></div>
-      <%= cf.text_field :contact, :placeholder=>"District Contact", :class => 'form-control' %>
+      <%= cf.text_field :contact, :placeholder=>"District Contact", :class => 'form-control district_contact' %>
+      <span class="district_contact_error"></span>
     </div>
 
     <div class="form-group">
       <div class="form-icon"><i class="fa fa-envelope"></i></div>
-      <%= cf.email_field :email, :placeholder=>"District Contact Email Address", :class => 'form-control' %>
+      <%= cf.email_field :email, :placeholder=>"District Contact Email Address", :class => 'form-control district_email' %>
+      <span class="district_email_error"></span>
     </div>
 
     <div class="form-group">
       <div class="form-icon"><i class="fa fa-phone"></i></div>
-      <%= cf.text_field :phone_number, :placeholder=>"District Phone Number", :class => 'form-control'%>
+      <%= cf.text_field :phone_number, :placeholder=>"District Phone Number", :class => 'form-control district-phone-number'%>
+      <span class="errmsg"></span>
     </div>
 
     <div class="form-group">
       <div class="form-icon"><i class="fa fa-map-marker"></i></div>
-      <%= cf.text_area :street_address, :placeholder=>"*Street Address", :class => 'form-control'%>
+      <%= cf.text_area :street_address, :placeholder=>"*Street Address", :class => 'form-control district_street_address'%>
+      <span class="district_street_address_error"></span>
     </div>
 
     <div class="form-group">
       <div class="form-icon"><i class="fa fa-building"></i></div>
-      <%= cf.select :state, options_for_select(User::SELECT_STATE_OPTION), {:prompt => "Select state" }, :class => 'form-control' %>
+      <%= cf.select :state, options_for_select(User::SELECT_STATE_OPTION), {:prompt => "Select state" }, :class => 'form-control district_state' %>
       <%#= cf.text_field :state, :placeholder=>"*State", :class => 'form-control' %>
+      <span class="district_state_error"></span>
     </div>
 
     <div class="form-group">
       <div class="form-icon"><i class="fa fa-building"></i></div>
-      <%= cf.text_field :city, :placeholder=>"*City", :class => 'form-control' %>
+      <%= cf.text_field :city, :placeholder=>"*City", :class => 'form-control district_city' %>
+      <span class="district_city_error"></span>
     </div>
 
     <div class="form-group">
       <div class="form-icon"><i class="fa fa-user"></i></div>
-      <%= cf.text_field :zip_code, :placeholder=>"*Zip Code", :class => 'form-control' %>
+      <%= cf.text_field :zip_code, :placeholder=>"*Zip Code", :class => 'form-control district_zip_code' %>
+      <span class="district_zip_code_error"></span>
     </div>
   </div>
   <%#= cf.link_to_remove "Remove this task" %>

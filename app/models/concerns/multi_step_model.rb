@@ -6,8 +6,7 @@ module MultiStepModel
   end
 
   def current_step_valid?
-    true
-    # valid?
+    valid?
   end
 
   def all_steps_valid?

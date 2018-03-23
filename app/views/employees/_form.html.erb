@@ -1,0 +1,13 @@
+<section class="form-container">
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col-md-6">
+        <div class="form-wrapper panel panel-primary">
+          <%= nested_form_for(build_employee(@employee)) do |f| %>
+            <%= render 'employees/steps/current_step', f: f %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

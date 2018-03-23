@@ -16,6 +16,9 @@ class CandidatesController < ApplicationController
     end
   end
 
+  def index
+  end
+
   protected
 
   def candidate_params
@@ -34,5 +37,4 @@ class CandidatesController < ApplicationController
       districts_attributes: [:name, :nces, :contact, :email, :phone_number, :street_address, :state, :city, :zip_code, :_destroy]
     )
   end
-
 end

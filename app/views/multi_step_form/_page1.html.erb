@@ -3,43 +3,51 @@
 <p class="text-center sub-title">Please complete the following Information</p>
 <div class="form-group">
   <div class="form-icon"><i class="fa fa-user"></i></div>
-  <%= f.text_field :user_name, :class => 'form-control', :placeholder=>"User Name" %>
+  <%= f.text_field :user_name, :class => 'form-control', :placeholder=>"User Name", :id => 'candidate_name' %>
+  <span id="candidate_name_error"></span>
 </div>
 
 <div class="form-group">
   <div class="form-icon"><i class="fa fa-file"></i></div>
-  <%= f.text_field :social_security, :class => 'form-control', :placeholder=>"Social security" %>
+  <%= f.text_field :social_security, :class => 'form-control', :placeholder=>"Social security", :id => 'candidate_social_security' %>
+  <span id="candidate_social_security_error"></span>
 </div>
 
 <div class="form-group">
   <div class="form-icon"><i class="fa fa-calendar"></i></div>
-  <%= f.text_field :date_of_birth, :class => 'form-control datepicker', :placeholder=>"Date Of Birth" %>
+  <%= f.text_field :date_of_birth, :class => 'form-control datepicker', :placeholder=>"Date Of Birth", :id => 'candidate_dob' %>
+  <span id="candidate_dob_error"></span>
 </div>
 
 <div class="form-group">
   <div class="form-icon"><i class="fa fa-envelope"></i></div>
-  <%= f.email_field :email, autofocus: true, autocomplete: "email", :class => 'form-control', :placeholder=>"Email" %>
+  <%= f.email_field :email, autofocus: true, autocomplete: "email", :class => 'form-control', :placeholder=>"Email", :id => 'candidate_email' %>
+  <span class="candidate_email_error"></span>
 </div>
 
 <div class="form-group">
   <div class="form-icon"><i class="fa fa-map-marker"></i></div>
-  <%= f.text_area :street_address, :class => 'form-control', :placeholder=>"Street Address" %>
+  <%= f.text_area :street_address, :class => 'form-control', :placeholder=>"Street Address", :id => 'candidate_address' %>
+  <span id="candidate_address_error"></span>
 </div>
 
 <div class="form-group">
   <div class="form-icon"><i class="fa fa-building"></i></div>
-  <%= f.select :state, options_for_select(User::SELECT_STATE_OPTION), {:prompt => "Select state" }, :id => 'state', :class => 'form-control' %>
+  <%= f.select :state, options_for_select(User::SELECT_STATE_OPTION), {:prompt => "Select state" }, :id => 'state', :class => 'form-control', :id => 'candidate_state'%>
+  <span id="candidate_state_error"></span>
   <%#= f.text_field :state, :class => 'form-control', :placeholder=>"State" %>
 </div>
 
- <div class="form-group">
+<div class="form-group">
   <div class="form-icon"><i class="fa fa-building"></i></div>
-  <%= f.text_field :city, :class => 'form-control', :placeholder=>"City" %>
+  <%= f.text_field :city, :class => 'form-control', :placeholder=>"City", :id => 'candidate_city' %>
+  <span id="candidate_city_error"></span>
 </div>
 
 <div class="form-group">
   <div class="form-icon"><i class="fa fa-user"></i></div>
-  <%= f.text_field :zip_code, :class => 'form-control', :placeholder=>"Zip Code" %>
+  <%= f.text_field :zip_code, :class => 'form-control', :placeholder=>"Zip Code", :id => 'candidate_zip_code' %>
+  <span id="candidate_zip_code_error"></span>
 </div>
 
 <!-- <div class="form-group password-field">
@@ -53,6 +61,7 @@
   <div class="form-icon"><i class="fa fa-lock"></i></div>
   <%#= f.password_field :password_confirmation, autocomplete: "off", :class => 'form-control', :placeholder=>"Confirm Password" %>
 </div> -->
+
 <div class="form-group">
   <span class="check-box">
     <input type="checkbox" id='check'/>

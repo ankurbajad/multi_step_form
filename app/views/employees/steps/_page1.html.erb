@@ -1,0 +1,56 @@
+<div class="panel-heading">Employee Information</div>
+<p class="text-center sub-title">Please complete the following Information</p>
+<div class="form-group">
+  <div class="form-icon"><i class="fa fa-user"></i></div>
+  <%= f.text_field :name, :class => 'form-control', :placeholder=>"Employee Name", :id => 'employee_name' %>
+  <span id="employee_name_error"></span>
+</div>
+<div class="form-group">
+  <div class="form-icon"><i class="fa fa-file"></i></div>
+  <%= f.text_field :social_security, :class => 'form-control', :placeholder=>"Last 4 Social Security #", :id => 'employee_social_security' %>
+  <span id="employee_social_security_error"></span>
+</div>
+<div class="form-group">
+  <div class="form-icon"><i class="fa fa-envelope"></i></div>
+  <%= f.email_field :email, :class => 'form-control', :placeholder=>"Employee Email Address", :id => 'employee_email' %>
+  <span class="employee_email_error"></span>
+</div>
+<div class="form-group">
+  <div class="form-icon"><i class="fa fa-phone"></i></div>
+  <%= f.text_field :contact_number, :class => 'form-control', :placeholder=>"Employee Number", :id => 'employee_contact_number' %>
+  <span id="employee_contact_number_error"></span>
+</div>
+
+<div class="form-group salary-inputs">
+  <b><%= f.label :salary_inclusion %> </b><br />
+  <span>
+  <%= f.radio_button :salary_inclusion, 'yes' %>
+  <%= f.label :salary_inclusion, 'Yes' %></span>
+  <span>
+  <%= f.radio_button :salary_inclusion, 'no', :checked => true  %>
+  <%= f.label :salary_inclusion, 'No' %></span>
+</div>
+
+<div class="form-group salary-inputs">
+  <b><%= f.label :document_retrieval %></b> <br />
+  <span>
+  <%= f.radio_button :document_retrieval, 'pick­up' %>
+  <%= f.label :document_retrieval, 'Pick­up' %></span>
+  <span>
+  <%= f.radio_button :document_retrieval, 'email', :checked => true  %>
+  <%= f.label :document_retrieval, 'Email' %></span>
+  <span>
+  <%= f.radio_button :document_retrieval, 'mail'  %>
+  <%= f.label :document_retrieval, 'Mail' %></span>
+  <br />
+</div>
+
+<div class="form-group">
+  <span class="check-box">
+    <%= f.check_box :terms_condition, {checked: true, checked_value: "yes", unchecked_value: "No"}  %>
+  </span>
+  <div class="extra-wrap">
+    <label for="check" class="checkdata">By selecting this box I consent to recieve electronic communications from Veriteach LLC. per the</label>
+    <p><a href="javascript:void(0)" class="terms-conditions">Terms & Conditions</a></p>
+  </div> 
+</div>

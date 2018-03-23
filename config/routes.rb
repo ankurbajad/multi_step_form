@@ -10,5 +10,6 @@ Rails.application.routes.draw do
   #   end
   # end
   resources :candidates
-  root :to => "candidates#new"
+  resources :employees
+  root :to => "candidates#index"
 end

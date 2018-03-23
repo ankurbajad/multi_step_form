@@ -26,6 +26,7 @@ class ModelWizard
     if @params[:back_button]
       @object.step_back
     elsif @object.current_step_valid?
+    #elsif @params[:candidate][:current_step].to_i <= 2
       return process_save
     end
     false
